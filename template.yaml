@@ -10,9 +10,17 @@ Globals:
   Function:
     Timeout: 3
 
-Resources:
+Parameters:
+  ArtifactBucketName:
+    Type: String
+    Default: biswajit-bastia-dataset
 
-  ### AWS GLUE RESOURCES ###
+  ETLScriptsPrefix:
+    Type: String
+    Default: glue
+
+
+Resources:
   AWSGlueJobRole:
     Type: "AWS::IAM::Role"
     Properties:
