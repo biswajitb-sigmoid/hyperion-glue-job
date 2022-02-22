@@ -34,5 +34,6 @@ jobs:
           name: hyperion-glue-task
           template: template.yaml
           no-fail-on-empty-changeset: "1"
-          parameter-overrides: "Capabilities=CAPABILITY_IAM,CAPABILITY_AUTO_EXPAND,env=dev"
+          parameter-overrides: "env=dev"
+          capabilities: "CAPABILITY_IAM,CAPABILITY_AUTO_EXPAND"
 
