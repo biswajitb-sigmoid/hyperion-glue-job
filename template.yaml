@@ -13,11 +13,15 @@ Globals:
 Parameters:
   ArtifactBucketName:
     Type: String
-    Default: biswajit-bastia-dataset
+    Default: biswajit-code-deploy
 
   ETLScriptsPrefix:
     Type: String
     Default: glue
+
+  env:
+    Type: String
+    Default: dev
 
 
 Resources:
@@ -45,8 +49,6 @@ Resources:
                   - "s3:ListBucket"
                   - "s3:DeleteObject"
                 Resource:
-                  - !Sub "arn:aws:s3:::${DataBucketName}"
-                  - !Sub "arn:aws:s3:::${DataBucketName}/*"
                   - !Sub "arn:aws:s3:::${ArtifactBucketName}"
                   - !Sub "arn:aws:s3:::${ArtifactBucketName}/*"
       ManagedPolicyArns:
